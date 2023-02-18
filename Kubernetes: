@@ -1,0 +1,67 @@
+Kubernetes Services:
+=========================================================================================================================================
+Q.1 What are the different type of services in kubernetes?
+1.Nodeport
+2.Cluster IP
+3.Headless
+4.Load Balancer
+
+Q.2 What is nodeport service?
+
+If the client wants to communicate with the service through any of the nodes in the cluster than we use nodeport.
+
+Q.3 What is headless service?
+
+If the client wants to communicate with a specific pod than use headless service.
+
+Q.5 What is load balancer type service?
+
+Load balancer service is an extension of node port service.It is a secure way of communicating using node port service.
+
+Command to check the service end points:
+1.kubectl get endpoints
+2.Kubectl get services
+=========================================================================================================================================
+Why use kubernetes services?
+
+Services provide stable ip
+Services work as load balancer
+Services provide loose coupling
+=========================================================================================================================================
+
+Master Node Components:
+=======================
+1.API Server (Client communicates through this server)
+2.Control manager(Monitor cluster events)
+3.Scheduler (Schedule pods based on nodes resources)
+4.ETCD (Key value storage)
+
+Kubectl is kubernetes client.
+Multiple master node is there to make the cluster fault tolerant.
+Pods can be communicated only through this api server.
+A cluster has worker node and master node.
+=========================================================================================================================================
+Command to get inside pods:
+kubectl exec -it pod_name -- /bin/bash
+
+Daemonset:
+What is the use of daemonset?
+Daemonset ensure a pod in all nodes in a cluster.
+Use Case:
+1.Logging
+2.Security
+=========================================================================================================================================
+Q.What are the different components of kubernetes?
+1.Pods
+2.Configmap
+3.Secret
+4.Statefulset
+5.Services
+6.Ingress
+7.Daemonset
+8.Deployment
+=========================================================================================================================================#Daemonset commands
+
+kubectl get daemonset
+kubectl describe daemonset
+
