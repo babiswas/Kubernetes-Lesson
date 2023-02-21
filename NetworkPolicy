@@ -1,0 +1,36 @@
+Network Policy in Kubernetes:
+============================
+Control traffic flow at the IP adress level or port using kubernetes network policy.
+Objective:How A pod is allowed to communicate with other entities.
+Pod can communicate with:
+1.Other pods
+2.Namespaces
+3.IP
+
+#Network Plugin is required to support network policy.(Container Network Interface)
+
+INGRESS--->Incoming Traffic
+EGRESS---->Outgoing Traffic
+
+=========================================================================================================================================
+Ingress rule is applicable for inbound traffic or for incoming traffic.
+Egress rule is applicable for outbound traffic or Outgoing trafffic.
+
+Egress policy of source pod and Ingress policy of destination pod should allow the connection for source to destination connection to happen.
+=========================================================================================================================================
+1.Ipblock
+2.Namespace
+3.Pod
+4.Port
+5.Protocol
+=========================================================================================================================================
+Create network policy resource but make sure networking solution is there in the pod.
+The chosen network solution should support the network policy.
+
+#ApiVersion
+#Metadata
+#Kind
+#Spec
+
+These are the attributes of the network policy component.
+
