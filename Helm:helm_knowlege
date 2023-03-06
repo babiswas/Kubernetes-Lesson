@@ -1,0 +1,56 @@
+Helm:
+===========================================================================
+Helm chart store the dependencies on chart folder
+
+
+charts/
+
+Dependency:
+1.Charts.yml
+Charts(Folder)
+Chart.Lock
+
+==========================================================================
+
+helm dependency update mychart
+helm dependency list
+helm list
+
+subcharts can be put into the charts folder using 
+helm dependency update
+
+
+Artifact Hub--->Package hosting platform for helm.
+
+helm repo add bitamani url
+helm repo list
+helm search repo application
+helm install release_name bitamani/app
+helm status release_name
+helm install release_name bitamani/app --namespace=name
+helm uninstall release_name --keep-history
+helm show values bitamani/app
+helm install release_name bitamani/app -f values.yml(custom values)
+helm install release_name bitamani/tomcat --values values_tomcat.yml
+helm install release_name bitamani/app --values custom.yml --dry-run
+helm repo update bitamani
+helm status release_name | grep -i password
+kubectl get svc release_name
+helm history release_name
+helm rollback release_name revision
+
+=========================================================================
+
+helm install release_name bitamani/app --generate-name
+helm ls release_name
+helm dependency update mychart
+helm install release_name bitamani/app --values xyz.yml --dry-run
+helm template release_name --values xyz.yml
+helm get values release_name --all
+helm get notes release_name 
+helm get hooks release_name
+helm history release_name
+
+
+==========================================================================
+helm install release_name bitamani/app --wait --timeout 30ms
