@@ -1,0 +1,53 @@
+Kubernetes
+==========
+
+Service account
+===============
+
+1.Service account provides an identity to the pod to interact with kubernetes api.
+
+a)Logical partitioning of a cluster is done by namespace.
+b)A kubernetes namespace has multiple service account associated with it.
+c)The service acccount provides identity to the pod so that it can interact with kubernetes api.
+
+Why service accounts are required?
+1.To authenticate pods against kubernetes api.
+2.Fine grained access using RBAC
+3.Attach secrets to pods so they call api server.
+
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: my-service-account
+  namespace: default
+
+
+kubectl apply -f my-sva.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  serviceAccountName: my-service-account
+  containers:
+    - name: my-container
+      image: my-image
+
+Associating service account in pods.
+
+Create a role say just for listing pods
+Attach that role to a service account using "Rolebinding."
+
+
+kubectl get serviceaccounts
+kubectl describe serviceaccount my-service-account
+
+A namespace has multiple service account associated with it.
+namespace is seen as logical partitioning of kubernetes cluster.
+Service account is namespaced resources.
+
+Why multiple service account within namespace?
+1.Provide least priviledge access to pod.
+2.Enforce security boundaries within same namespace.
