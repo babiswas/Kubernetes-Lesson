@@ -1,0 +1,97 @@
+kuberntetes volume
+===================
+1.Pod level volume (empty directory)
+2.Cluster level volume.(PVC)
+3.Nodelevel volume(hostpath)
+
+
+emptyDir----------->Temporary storage shared by containers in a Pod. Lives as long as the Pod.
+hostPath------------>Mounts a file/directory from the host node’s filesystem into the Pod.
+configMap------------>Mounts a ConfigMap as a file or directory.
+secret-------------->Mounts secrets into a Pod.
+persistentVolumeClaim---------------->Links to a PersistentVolume for long-term, dynamic storage.
+
+
+Empty directory volume
+======================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-demo
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: [ "sh", "-c", "echo Hello > /data/hello.txt && sleep 3600" ]
+    volumeMounts:
+    - mountPath: /data
+      name: shared-data
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+
+Persistant Volume Claim(PVC)
+============================
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+Pod mapped with PVC
+====================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-pod
+spec:
+  containers:
+  - name: app
+    image: nginx
+    volumeMounts:
+    - mountPath: "/usr/share/nginx/html"
+      name: my-storage
+  volumes:
+  - name: my-storage
+    persistentVolumeClaim:
+      claimName: my-pvc
+
+
+Kubernetes volume using hostpath
+=================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-demo
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command: [ "sleep", "3600" ]
+      volumeMounts:
+        - name: host-volume
+          mountPath: /data/host
+  volumes:
+    - name: host-volume
+      hostPath:
+        path: /tmp/data    # This path must exist on the host node
+        type: DirectoryOrCreate  # Creates the directory if it doesn't exist
+
+
+
+
+
+
+
+
+
+
