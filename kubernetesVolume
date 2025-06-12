@@ -86,6 +86,16 @@ spec:
         path: /tmp/data    # This path must exist on the host node
         type: DirectoryOrCreate  # Creates the directory if it doesn't exist
 
+Persistant Volume
+===================
+kubectl get pv
+Provisioning types
+=====================
+1.Static provisioning
+2.Dynamic provisioning
+
+If the pvc doesn't match any of the static Persistance Volume than dynamic provisioning happens.
+
 
 
 
