@@ -104,6 +104,13 @@ Trminologies associated with kubernetes volume
 3.Storageclass
 
 
+Access modes
+=============
+ReadWriteOnce->Only one node can read and write data.
+ReadOnlyMany--->Can be read by many nodes.
+ReadWriteMany---->Can be read write many nodes
+
+
 
 
 
