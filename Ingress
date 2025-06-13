@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+    - host: app-a.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-a
+                port:
+                  number: 80
+    - host: app-b.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-b
+                port:
+                  number: 80
+    - host: example.com
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: service-c
+                port:
+                  number: 80
+
+Routes external traffic to services.
+This is service level traffic control
+
+
+ingress rules and ingress controller for controlling external traffic to services.
