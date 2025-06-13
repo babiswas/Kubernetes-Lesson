@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+spec:
+  podSelector:
+    matchLabels:
+      app: backend      # 👈 applies to backend pods
+  policyTypes:
+  - Ingress             # 👈 controls incoming traffic
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend  # 👈 only allow pods with app=frontend to connect
+
+
+This applies to the pod traffic
+If network policy is applied on any pod all incoming/outgoing traffic is as per the network policy.
