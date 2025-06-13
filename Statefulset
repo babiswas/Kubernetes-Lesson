@@ -1,0 +1,72 @@
+Statefulset
+===========
+Deployment
+Statefulset
+Deamonset
+
+1.Stable unique network identifiers.
+2.Stable persistant storage
+3.Ordered graceful deployment
+4.Ordered rolling update
+
+only for stateful set the pods can be reached using DNS below.
+
+pdname.servicename.namespace.svc.cluster.local
+
+DNS for pods associated with stateful set
+========================================
+p-0.pservice.default.svc.cluster.local
+p-1.pservice.default.svc.cluster.local
+p-2.pservice.default.svc.cluster.local
+
+
+ping p-0.pservice.default.svc.cluster.local
+
+clusterIP service
+=================
+This service is accessible from within the cluster.
+
+<service-name>.<namespace>.svc.cluster.local
+
+nslookup orderservice.orders.svc.cluster.local
+
+
+<pod-name>.<service-name>.<namespace>.svc.cluster.local
+
+
+Configmap
+=========
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orderservice-config
+data:
+  APP_ENV: "production"
+  LOG_LEVEL: "info"
+
+
+Headless Service
+=================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderservice
+spec:
+  clusterIP: None
+  selector:
+    app: orderservice
+  ports:
+    - port: 80
+      targetPort: 8080
+
+
+
+
+
+
+
+
+
+
