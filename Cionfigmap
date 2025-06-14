@@ -1,0 +1,10 @@
+Configmaps
+==========
+A configmap is used to store nonconfidential data.
+
+Pods can consume configmaps as 
+1.enviroment variables.
+2.configuration files
+3.command line arguments
+
+upper limit for configmap data is 1mb
