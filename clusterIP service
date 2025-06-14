@@ -1,0 +1,42 @@
+ClusterIP Service
+=================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-internal-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+
+
+  DNS of cluster IP service
+  =========================
+service-name.namespace.svc.cluster.local
+
+
+In clusterIP service the load balancing is disabled.
+
+A headless service
+===================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-headless-service
+spec:
+  clusterIP: None
+  selector:
+    app: my-app
+  ports:
+  - port: 80
+    targetPort: 9376
+
+nslookup my-headless-service.default.svc.cluster.local
+
+This returns a list of ip's
