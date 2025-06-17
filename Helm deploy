@@ -1,0 +1,81 @@
+Helm
+====
+
+command to create repository for helm
+
+helm create flask-chart
+helm install flask-release ./flask-chart
+
+cd flask-chart
+
+
+flask-chart/
+├── Chart.yaml
+├── values.yaml
+└── templates/
+    ├── deployment.yaml
+    ├── service.yaml
+    └── _helpers.tpl
+
+
+values.yaml
+============
+
+replicaCount: 1
+
+image:
+  repository: yourdockerhubusername/flask-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+  port: 80
+
+containerPort: 5000
+
+
+Deployment.yaml
+================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "flask-chart.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "flask-chart.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "flask-chart.name" . }}
+    spec:
+      containers:
+        - name: flask
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.containerPort }}
+
+service.yaml
+=============
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "flask-chart.fullname" . }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ include "flask-chart.name" . }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.containerPort }}
+
+
+
+
+
+
