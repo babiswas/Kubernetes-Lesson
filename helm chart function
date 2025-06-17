@@ -1,0 +1,65 @@
+helm install --debug --dry-run flask-release ./mycharts
+helm install flask-release ./mychart
+helm get manifest flask-release
+helm uninstall flask-release
+helm install solid-vulture ./mychart --dry-run --debug --set favoriteDrink=slurm
+
+
+Release object attributes
+==========================
+
+Release.Name
+Release.Namespace
+Release.IsUpgrade
+Release.IsInstall
+Release.Revision
+Release.Service
+
+
+quote function in helm
+==================================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+  drink: {{ quote .Values.favorite.drink }}
+  food: {{ quote .Values.favorite.food }}
+
+
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+  drink: {{ .Values.favorite.drink | quote }}
+  food: {{ .Values.favorite.food | quote }}
+
+===================================================
+
+{{- $services := (lookup "v1" "Service" "mynamespace" "").items }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-names
+data:
+  services: |-
+    {{- range $index, $svc := $services }}
+    - name: {{ $svc.metadata.name }}
+    {{- end }}
+
+lookup function in helm
+===================================================
+lookup apiVersion resource namespace name
+
+
+{{- with .Values.favorite }}
+  drink: {{ .drink | default "tea" | quote }}
+  food: {{ .food | upper | quote }}
+  release: {{ $.Release.Name }}
+	{{- end }}
