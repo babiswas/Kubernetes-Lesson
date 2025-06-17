@@ -6,3 +6,7 @@ nginx.ingress.kubernetes.io/ssl-redirect
 nginx.ingress.kubernetes.io/proxy-read-timeout
 nginx.ingress.kubernetes.io/limit-connections, limit-rpm, limit-rps
 nginx.ingress.kubernetes.io/whitelist-source-range
+nginx.ingress.kubernetes.io/enable-websockets
+nginx.ingress.kubernetes.io/affinity:
+
+
