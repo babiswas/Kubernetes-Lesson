@@ -1,0 +1,8 @@
+nginx ingress annotations
+
+
+nginx.ingress.kubernetes.io/rewrite-target
+nginx.ingress.kubernetes.io/ssl-redirect
+nginx.ingress.kubernetes.io/proxy-read-timeout
+nginx.ingress.kubernetes.io/limit-connections, limit-rpm, limit-rps
+nginx.ingress.kubernetes.io/whitelist-source-range
