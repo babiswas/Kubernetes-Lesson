@@ -1,0 +1,6 @@
+helm install --debug --dry-run release-name ./mychart
+helm create mychart
+helm get manifest release-name
+helm install -f myvals.yaml ./mychart
+helm install --set foo=bar ./mychart
+helm install stable/drupal --set image=my-registry/drupal:0.1.0 --set livenessProbe.exec.command=[cat,docroot/CHANGELOG.txt] --set livenessProbe.httpGet=null
