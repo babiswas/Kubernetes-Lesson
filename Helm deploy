@@ -6,6 +6,7 @@ command to create repository for helm
 helm create flask-chart
 helm install flask-release ./flask-chart
 helm get manifest flask-release
+helm install --debug --dry-run flask-release ./mychart
 
 cd flask-chart
 
