@@ -1,0 +1,7 @@
+Kubernetes Components
+======================
+1.Api server
+2.Cloud control manager
+3.Kube control manager
+4.ETCD
+5.Kube scheduler
