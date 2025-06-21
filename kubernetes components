@@ -9,5 +9,7 @@ Kubernetes Components
               controller
  worker1  worker2 worker3 worker4
 
-kubelet and kubeproxy reside inside worker node.
+container run time,kubelet and kubeproxy reside inside worker node.
 control manager,etcd,api server,kube scheduler reside inside controller node.
+
+
