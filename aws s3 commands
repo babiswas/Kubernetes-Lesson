@@ -1,1 +1,20 @@
+AWS cli commands
+================
 
+aws s3 bucket commands
+======================
+
+1.aws s3 cp s3://bucket/xyz .
+2.aws s3 ls
+3.aws s3 ls s3://bucket
+4.aws s3 ls s3://bucket/ --recursive
+5.aws s3 ls s3://gaurav-test-today/ --recursive --human-readable --summarize
+6.aws s3 cp s3://bucket/xyz/uvw pathname
+7.aws s3 mb s3://mybucket
+8.aws s3 mb s3://mybucket --region us-west-1
+
+
+
+Link to s3 bucket
+====================
+https://gauravguptacloud.medium.com/aws-s3-cli-commands-f367d0e10f4b
