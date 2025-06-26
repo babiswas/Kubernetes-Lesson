@@ -18,3 +18,26 @@ aws s3 bucket commands
 Link to s3 bucket
 ====================
 https://gauravguptacloud.medium.com/aws-s3-cli-commands-f367d0e10f4b
+
+AWS S3 CLI commands
+===================
+aws s3 ls s3://mybucket
+aws s3 ls s3://mybucket --recursive
+aws s3 ls s3://mybucket --recursive --human-readable --summarize
+aws s3 cp s3://mybucket1 s3://mybucket2
+aws s3 cp s3://mybucket/myfile.txt s3://mybucket/myfile1.txt
+aws s3 cp s3://mybucket/myfile.txt xyz.txt
+aws s3 cp myfile.txt s3://mybucket/myfile.txt
+aws s3 cp myfile.txt s3://mybucket/newfile.txt --expires timestamp
+aws s3 cp s#://mybucket . --recursive
+aws s3 cp s3://mybucket1 s3://mybucket2 --recursive
+aws s3 mb s3://newbucket/
+aws s3 mb s3://mybucket2 --region us-west-2
+aws s3 mv s3://mybucket1/new.txt s3://mybucket2/new.txt
+aws s3 mv s3://mybucket1 s3://mybucket2
+aws s3 presign s3://mybucket/file.txt --expires-in 604800
+aws s3 rb s3://mybucket
+aws s3 rb s3://mybucket --force
+aws s3 rm s3://mybucket/newfile.txt
+aws s3 rm s3://mybucket --recursive
+aws s3 rm s3://mybucket --recursive --exclude "*.jpeg"
