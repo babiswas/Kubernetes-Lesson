@@ -41,3 +41,7 @@ aws s3 rb s3://mybucket --force
 aws s3 rm s3://mybucket/newfile.txt
 aws s3 rm s3://mybucket --recursive
 aws s3 rm s3://mybucket --recursive --exclude "*.jpeg"
+Sync commands in s3:
+====================
+aws s3 sync . s3://mybucket
+aws s3 website s3://my-bucket/ --index-document index.html --error-document error.html
