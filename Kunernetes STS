@@ -14,4 +14,14 @@ aws sts get-caller-identity
 
 aws sts assume-role --role-arn arn:aws:iam::111122223333:role/MyExampleRole --role-session-name MySessionName
 
+Assume Role using named profile
+=================================
+Edit your AWS config file (~/.aws/config) and add a profile that uses the role you want to assume:
+
+[profile my-assumed-role]
+role_arn = arn:aws:iam::111122223333:role/MyExampleRole
+source_profile = default
+region = us-east-1
+
+
 
