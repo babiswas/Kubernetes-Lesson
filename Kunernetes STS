@@ -1,0 +1,17 @@
+Role
+a)permission b)Trust relationship
+
+Command
+=========
+aws sts get-caller-identity
+
+{
+    "UserId": "AROAXXXXXXXXXXXXX:MySessionName",
+    "Account": "111122223333",
+    "Arn": "arn:aws:sts::111122223333:assumed-role/MyExampleRole/MySessionName"
+}
+
+
+aws sts assume-role --role-arn arn:aws:iam::111122223333:role/MyExampleRole --role-session-name MySessionName
+
+
