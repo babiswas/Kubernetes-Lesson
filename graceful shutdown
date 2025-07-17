@@ -1,0 +1,42 @@
+Cluster Administration
+======================
+Node shutdown can be graceful or not graceful.
+Kubelet ensure pod follow the normal termination process during the node shut down.
+
+shutdownGracePeriod 
+shutdownGracePeriodCriticalPods 
+
+When systemd gets notified of node shutdown kubelet sets non ready condition on the node.
+Schedulers honor this condition and does not schedule any pods.
+
+Kubelet terminates pods when node is about to shut down.
+
+During a graceful shutdown, kubelet terminates pods in two phases:
+
+Terminate regular pods running on the node.
+Terminate critical pods running on the node.
+
+shutdownGracePeriod
+shutdownGracePeriodCriticalPods
+
+
+1.Critical pods
+2.NonCritical pods
+
+pod priority based graceful shutdown.
+
+=======================================================
+
+Pod priority class name	 Pod priority class value
+custom-class-a	         100000
+custom-class-b	         10000
+custom-class-c	         1000
+regular/unset	         0
+
+=======================================================
+
+GracefulNodeShutdownBasedOnPodPriority feature gate, and setting ShutdownGracePeriodByPodPriority in the kubelet config 
+
+Taint is applied on the node and Tolerance we apply on the pod.
+
+Before adding the taint node.kubernetes.io/out-of-service,
