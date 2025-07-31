@@ -1,0 +1,26 @@
+Elastic Block Storage
+======================
+EBS volume is specific to availibility zone.
+EC2 should be in the same availibility zone.
+EBS-->Elastic block storage.
+C drive in windows corresponding to root volume in linux.
+Virtually attached device.
+An ec2 instance can remain attached to multiple EBS instance.
+
+
+An ebs volume can remain attached to multiple EC2 instance.
+IO1 and IO2 ebs can be attached to multiple instances.
+
+Instance store helps in providing storage inside the machine.
+EBS is used for data persistance.Even if the machine is terminated but data loss doesn't happen.
+
+
+SSD(GP2)
+ls blk(list block)
+
+How to use the ebs volume inside the system?
+============================================
+1.sudo mkfs.ext4 /dev/xvdf(make the device available within the system.)
+2.mount /dev/xvdf /test(mount the device for use)
+3.mountpoint /test
+4.umount /test
