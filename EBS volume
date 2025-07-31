@@ -48,3 +48,29 @@ Increase the partition
 
 growpart /dev/xvda 1
 resize2fs /dev/xvda1
+
+Attach EBS volume to multiple ec2 instance:
+============================================
+
+
+There are 2 types of hypervisor in aws 
+1.Zen based hypervisor doesnot support multiattach ebs
+2.Nitro based hypervisor supports ebs having multi attach facility
+
+Volume types
+=============
+gp2
+gp3
+io2
+io1
+sc1
+st1
+
+Throughput and IOPS
+====================
+Throughput MIB/sec
+
+for highrer iops use io1/io2
+
+EBS volume snapshots are stored in s3(Availability zone)
+Incremental Backup and Full Backup
