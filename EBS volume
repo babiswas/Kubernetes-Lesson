@@ -24,3 +24,27 @@ How to use the ebs volume inside the system?
 2.mount /dev/xvdf /test(mount the device for use)
 3.mountpoint /test
 4.umount /test
+5.file -s /dev/xvdf(Check if the ebs volume has a file system attached.)
+
+Detach EBS Volume
+=================
+1.Before attaching an existing ebs volume check if the filesystem is there in the ebs volume.
+2.To check the file system execute file -s /dev/xvdf
+3.If the file system is there than mount the device for use
+
+mount /dev/xvdf /data
+
+Resizing the EBS volume
+========================
+EBS volume can only be increased and cannot be decreased.
+Increase the size of the ebs volume and check the disk free
+
+df -h
+resize2fs /dev/xvdf
+
+There is a root volume in ec2 instance.
+
+Increase the partition
+
+growpart /dev/xvda 1
+resize2fs /dev/xvda1
