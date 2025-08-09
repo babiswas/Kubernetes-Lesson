@@ -1,0 +1,114 @@
+Kubernetes
+===========
+Control Node
+Worker Node
+
+kubectl get pod -o wide.
+kubectl get sc
+
+Persistant Volume
+=================
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data"
+
+
+ Creating aws storage class
+ ===========================
+ #To identify the device attached with the volume.
+ lsblk 
+
+ #Create a file system for the volume.
+ sudo mkfs -t xfs /dev/nvme1n1
+ sudo mkfs -t ext4 /dev/xvdg
+
+ #Create a mount point
+ sudo mount /dev/nvme1n1 /mnt/data.
+
+ Availability zone of the node and the volume should be same.
+
+ /dev device path.
+
+ df -h /dir
+
+ #To view the volume attached with the directory path.
+
+ Kubernetes storage class manifest
+ ================================
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+
+Data and application should be independednt.
+
+
+1.Elastic Bloc Storage(Auto growth not possible.)
+2.Elastic File System(Auto growth possible.)
+
+
+df -h directory path
+
+
+1.Persistant Volume
+2.Persiatnt volume claim
+3.Storage class
+3.Volumemount
+
+
+Claim not availble to bound to persiatnt volume.(Storage got detached.)
+
+Elastic File System(EFS)
+========================
+
+1.region
+2.availibility zone
+
+Elastic bloc Storage
+Elastic File System
+
+Scope of EFS is VPC
+
+https://yevhenii-m.medium.com/amazon-elastic-file-system-efs-usage-for-persistent-volumes-in-kubernetes-cluster-aws-eks-e41f9c30ef6d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
