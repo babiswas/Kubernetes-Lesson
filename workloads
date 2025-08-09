@@ -1,0 +1,74 @@
+Kubernetes  Workloads
+=====================
+Stateless web application
+Stateful web application
+
+Workload deals with lifecycle management of pods.
+
+
+Typres of kubernetes workload
+=============================
+
+Pods
+=====
+apiVersion: v1
+kind: Pod
+metadata:
+ name: web-app
+spec:
+ containers:
+ - name: web-server
+   image: nginx:latest  # Replace with the image of your web application
+   ports:
+   - containerPort: 80  # Expose port 80 within the container
+
+Deployment Controller
+======================
+Deployment controller manage the creation,deletion,scaling of pods.
+
+
+
+Deployment
+Replicasets
+pods
+
+Deployment manages replicaset to ensure desired number of pods are running.
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: web-app
+spec:
+ replicas: 3  # Number of replicas (instances) of the application to run
+ selector:
+   matchLabels:
+     app: web-app
+ template:
+   metadata:
+     labels:
+       app: web-app
+   spec:
+     containers:
+     - name: web-server
+       image: nginx:latest  # Replace with the image of your web application
+       ports:
+       - containerPort: 80  # Expose port 80 within the container
+
+
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: web-app-job
+spec:
+ template:
+   metadata:
+     name: web-app-pod
+   spec:
+     containers:
+     - name: web-server
+       image: nginx:latest  # Replace with the image of your web application
+       ports:
+       - containerPort: 80  # Expose port 80 within the container
+     restartPolicy: Never  # Job pods are not restarted upon failure
