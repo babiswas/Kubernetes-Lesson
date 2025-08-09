@@ -1,0 +1,37 @@
+StatefulSet
+===========
+Two type of workloads
+
+1.Pods
+2.Controllers
+
+Controllers
+===========
+1.Deployment
+2.Statefulset
+3.Daemonset
+4.Jobs
+
+A controller which is managing the pod.
+
+Specialities
+=============
+1.Unique network identifiers
+2.stable persistant storage
+3.Ordered graceful deployment and scaling
+4.Ordered automated rolling updates.
+
+Each pod is accessing a different volume.
+
+When the application dies it can resume from the same state from where it left.
+
+
+How to shutdown the statefulset?
+Write in one pod 
+and read from another pod.
+
+
+1.Storage class is across namespace.
+2.namespace are virtual cluster on top of physical clusters.
+
+Suppose we need to change enviroment variables on fly we can do these 
