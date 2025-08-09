@@ -1,76 +1,101 @@
-Elastic Block Storage
-======================
-EBS volume is specific to availibility zone.
-EC2 should be in the same availibility zone.
-EBS-->Elastic block storage.
-C drive in windows corresponding to root volume in linux.
-Virtually attached device.
-An ec2 instance can remain attached to multiple EBS instance.
+Kubernetes
+===========
+Control Node
+Worker Node
 
+kubectl get pod -o wide.
+kubectl get sc
 
-An ebs volume can remain attached to multiple EC2 instance.
-IO1 and IO2 ebs can be attached to multiple instances.
-
-Instance store helps in providing storage inside the machine.
-EBS is used for data persistance.Even if the machine is terminated but data loss doesn't happen.
-
-
-SSD(GP2)
-ls blk(list block)
-
-How to use the ebs volume inside the system?
-============================================
-1.sudo mkfs.ext4 /dev/xvdf(make the device available within the system.)
-2.mount /dev/xvdf /test(mount the device for use)
-3.mountpoint /test
-4.umount /test
-5.file -s /dev/xvdf(Check if the ebs volume has a file system attached.)
-
-Detach EBS Volume
+Persistant Volume
 =================
-1.Before attaching an existing ebs volume check if the filesystem is there in the ebs volume.
-2.To check the file system execute file -s /dev/xvdf
-3.If the file system is there than mount the device for use
 
-mount /dev/xvdf /data
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data"
 
-Resizing the EBS volume
+
+ Creating aws storage class
+ ===========================
+ #To identify the device attached with the volume.
+ lsblk 
+
+ #Create a file system for the volume.
+ sudo mkfs -t xfs /dev/nvme1n1
+ sudo mkfs -t ext4 /dev/xvdg
+
+ #Create a mount point
+ sudo mount /dev/nvme1n1 /mnt/data.
+
+ Availability zone of the node and the volume should be same.
+
+ /dev device path.
+
+ df -h /dir
+
+ #To view the volume attached with the directory path.
+
+ Kubernetes storage class manifest
+ ================================
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+
+Data and application should be independednt.
+
+
+1.Elastic Bloc Storage(Auto growth not possible.)
+2.Elastic File System(Auto growth possible.)
+
+
+df -h directory path
+
+
+1.Persistant Volume
+2.Persiatnt volume claim
+3.Storage class
+3.Volumemount
+
+
+Claim not availble to bound to persiatnt volume.(Storage got detached.)
+
+Elastic File System(EFS)
 ========================
-EBS volume can only be increased and cannot be decreased.
-Increase the size of the ebs volume and check the disk free
 
-df -h
-resize2fs /dev/xvdf
+1.region
+2.availibility zone
 
-There is a root volume in ec2 instance.
+Elastic bloc Storage
+Elastic File System
 
-Increase the partition
+Scope of EFS is VPC
 
-growpart /dev/xvda 1
-resize2fs /dev/xvda1
-
-Attach EBS volume to multiple ec2 instance:
-============================================
+https://yevhenii-m.medium.com/amazon-elastic-file-system-efs-usage-for-persistent-volumes-in-kubernetes-cluster-aws-eks-e41f9c30ef6d
 
 
-There are 2 types of hypervisor in aws 
-1.Zen based hypervisor doesnot support multiattach ebs
-2.Nitro based hypervisor supports ebs having multi attach facility
-
-Volume types
-=============
-gp2
-gp3
-io2
-io1
-sc1
-st1
-
-Throughput and IOPS
-====================
-Throughput MIB/sec
-
-for highrer iops use io1/io2
-
-EBS volume snapshots are stored in s3(Availability zone)
-Incremental Backup and Full Backup
+Scenerios where application deployment fail.
+=============================================
+PVC in pending state.
+Image pull failed.
+Property file missing property.
+PVC is in pending state.
+platform scripts failed and showing error.
+Exception in application.
+Config map issue
+Dependency failures
