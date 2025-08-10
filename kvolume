@@ -1,0 +1,15 @@
+Types of Volume
+===============
+1.Empty dir
+2.Host path
+
+Kubernetes  specific File system
+================================
+3.Configmap
+4.Secrets
+5.PVC
+
+Node directory if mounted to pod.
+If pod dies data will be recovered
+If node dies data will be lost
+If pod schedule in another node than also the data not available to pod.
