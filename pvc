@@ -1,0 +1,38 @@
+Persistant Volume
+==================
+
+PVC request more than available in PV
+PVC is pending
+state of the pod is pending
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: demo-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  storageClassName: standard
+  hostPath:
+    path: /tmp/demo-pv
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-pod
+spec:
+  containers:
+    - name: pvc-pod-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /data
+          name: data
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: pvc-dynamic
