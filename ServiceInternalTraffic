@@ -1,1 +1,21 @@
+Use service internal traffic policy for pods communication in the same node.
+
+Service Internal Traffic Policy enables internal traffic restrictions to only route internal traffic to endpoints within the node the traffic originated from.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+  internalTrafficPolicy: Local
+
+
+
+
 
