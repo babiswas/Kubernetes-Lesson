@@ -1,0 +1,145 @@
+Kubernetes RBAC
+================
+
+Steps:
+1.Create a role which has permission for certain operation.
+2.Assign the role to a user/service acccount.
+
+Role Based access control.(RBAC)
+Attribute based access control.(ABAC)
+
+1.User
+2.Service Account.
+
+Roles are namespaced objects.
+Cluster Role is not namespaced objects.
+
+Association
+===========
+1.(Role,User)RoleBinding
+2.(Role,ServiceAccount)RoleBinding
+
+
+User needs a certificate signed by certificate authority(cluster) to authenticate himself to the cluster.
+
+Methods to authenticate
+=========================
+1.Private Key
+2.Username Password
+3.Oauth
+
+
+What is service account?
+=========================
+Tokenvalues used to grant access to namespaces in cluster.
+
+
+RBAC Setup in kubernetes
+=========================
+kubectl api-versions|grep RBAC
+kubectl api-versions|grep pods
+
+Command to enable RBAC
+=======================
+kube-apiserver --authorization-mode=RBAC
+
+
+kubectl create serviceaccount demo-user
+TOKEN=$(kubectl create token demo-user)
+kubectl config set-credentials demo-user --token=$
+kubectl config set-context demo-user-context --cluster=default --user=demo-user
+kubectl config current-context
+kubectl config use-context demo-user-context
+
+
+
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: demo-role
+  namespace: default
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+      - create
+      - update
+
+
+kubectl apply -f role.yaml
+
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: demo-role-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: demo-role
+subjects:
+  - namespace: default
+    kind: ServiceAccount
+    name: demo-user
+
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: demo-role-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: demo-role
+subjects:
+  - namespace: default
+    kind: ServiceAccount
+    name: demo-user
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
