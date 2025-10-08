@@ -16,3 +16,12 @@ What reside inside the workers
 ===============================
 1.Kubelet
 2.Kubeproxy
+
+outside ----->api server
+                |
+                |
+               etcd<---------------Controller manager------|
+                                       |                   |
+                                    worker node<----------Scheduler
+
+
