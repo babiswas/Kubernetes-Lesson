@@ -1,0 +1,18 @@
+Kubernetes Architecture
+=======================
+1.Control Plane
+2.Workers
+
+Control plane components
+========================
+1.Database (etcd)
+2.Scheduler
+3.Controll manager
+4.Api server
+
+Basically the architecture has two blocks 1.Controllers and 2.Workers
+
+What reside inside the workers
+===============================
+1.Kubelet
+2.Kubeproxy
