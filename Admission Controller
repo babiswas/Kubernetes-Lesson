@@ -1,0 +1,32 @@
+Kubernetes Admission Controller
+===============================
+
+Admission Controller Functionalities
+1.Prevent vulnerable images from getting deployed.
+2.Manage Deployments asking too many resources.
+3.Enforce Pod security
+
+Admission controller intercept the request to kubernetes api server.
+
+Api server pipeline
+===================
+Request--->Authentication--->Authorization----->Admission Controller---->Api server
+
+Cluster admin can enable the admission controller.
+Cluster admin can edit the admission controller config file.
+
+Admission controllers can answer existential questions in the life of a DevOps:
+
+Is the pod requesting too many resources?
+Are the base images used to spawn the microservice pods secure?
+What is the priority of this deployment compared to the others?
+Which privileges are currently granted to the service account linked to these pods/deployments? Do they adhere to the principle of least privilege?
+
+They can block pods from running if the cluster is out of resources or if the images are not secure
+
+Admission Controllers:
+======================
+
+1.LimitRanger: Manages resource limits and requests, as mentioned before.
+2.PodSecurityPolicy: Acts on creation and modification of the pod and determines if it should be admitted based on the requested 3.security context and the available Pod Security Policies.
+4.PersistentVolumeClaimResize: Implements additional validations for checking incoming PersistentVolumeClaim resize requests.
