@@ -24,4 +24,12 @@ outside ----->api server
                                        |                   |
                                     worker node<----------Scheduler
 
+ETCD
+====
+Yamls executed using kubectl is stored in this database.
+
+kubectl port-forward pod-name -n namespace p1:p2
+kubectl get pods -o wide
+
+
 
