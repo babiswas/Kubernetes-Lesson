@@ -1,32 +1,78 @@
-Kubernetes Admission Controller
-===============================
-
-Admission Controller Functionalities
-1.Prevent vulnerable images from getting deployed.
-2.Manage Deployments asking too many resources.
-3.Enforce Pod security
-
-Admission controller intercept the request to kubernetes api server.
-
-Api server pipeline
-===================
-Request--->Authentication--->Authorization----->Admission Controller---->Api server
-
-Cluster admin can enable the admission controller.
-Cluster admin can edit the admission controller config file.
-
-Admission controllers can answer existential questions in the life of a DevOps:
-
-Is the pod requesting too many resources?
-Are the base images used to spawn the microservice pods secure?
-What is the priority of this deployment compared to the others?
-Which privileges are currently granted to the service account linked to these pods/deployments? Do they adhere to the principle of least privilege?
-
-They can block pods from running if the cluster is out of resources or if the images are not secure
-
-Admission Controllers:
+Certificate Automation
 ======================
 
-1.LimitRanger: Manages resource limits and requests, as mentioned before.
-2.PodSecurityPolicy: Acts on creation and modification of the pod and determines if it should be admitted based on the requested 3.security context and the available Pod Security Policies.
-4.PersistentVolumeClaimResize: Implements additional validations for checking incoming PersistentVolumeClaim resize requests.
+Certificate timeline in Digicert 13 months
+Certificate timeline in Let's encrypt is 3 months
+
+Automation of Cert management
+=============================
+Components required in ingress controller for https connection.
+1.Certificate
+2.Private Key
+
+Certificate and private key is issued by lets encrypt
+In kubernetes this two components 1.private key 2.certificate are stored as secrets.
+
+Cert manager and Ingress controller can write or read this secrets.
+
+
+Cert manager
+=============
+
+Cert manager isssue certificates.
+
+
+Ingress Controller------------Cert manager
+    |
+    |
+   external user.
+
+Cert manager tracks expiration date for certificates.Cert manager will perform renewal at configured time interval.
+
+
+Cert manager ------------------->Kubernetes Secret----------------->Inress Controller
+
+
+Two Challenge types
+===================
+1.HTTP 1
+2.DNS 1
+
+The challenge is to prove the ownership of the domain.
+Cert manager utillize the the ingress controller to serve challenge token.
+
+Cert manager store the certificate in kubernetes secret.
+
+HTTP 01 challenge
+=================
+
+ACME client in customer premises request a certificate for a domain.
+CA server provides a token and asks to place it in well known path
+ACME client ask the webserver to place the file in the desired path with desired content
+ACME notifies CA server file is in place.
+CA server retrive the file from well known path
+if the file is retrieved and the content is same domain ownership is proved.
+
+
+Ingress Controller
+===================
+                                                                         P1
+Outside traffic ---------->Ingress Controller --------->Service -------- p2
+                                                                         p3
+
+
+Install ingress controller using helm
+======================================
+Steps
+======
+helm repo add nginx-stable https://helm.nginx.com/stable 
+helm install nginx-kic nginx-stable/nginx-ingress \  --namespace nginx-ingress  --set controller.enableCustomResources=true \ 
+kubectl get deployments --namespace nginx-ingress  NAME  
+
+
+Cert manager deployment
+=========================
+helm repo add jetstack https://charts.jetstack.io 
+helm repo update
+helm install cert-manager jetstack/cert-manager \  --namespace cert-manager --create-namespace \
+kubectl get deployments --namespace cert-manager  NAME 
