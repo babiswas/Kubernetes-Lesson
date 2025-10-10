@@ -1,0 +1,54 @@
+Certificate Automation
+======================
+
+Certificate timeline in Digicert 13 months
+Certificate timeline in Let's encrypt is 3 months
+
+Automation of Cert management
+=============================
+Components required in ingress controller for https connection.
+1.Certificate
+2.Private Key
+
+Certificate and private key is issued by lets encrypt
+In kubernetes this two components 1.private key 2.certificate are stored as secrets.
+
+Cert manager and Ingress controller can write or read this secrets.
+
+
+Cert manager
+=============
+
+Cert manager isssue certificates.
+
+
+Ingress Controller------------Cert manager
+    |
+    |
+   external user.
+
+Cert manager tracks expiration date for certificates.Cert manager will perform renewal at configured time interval.
+
+
+Cert manager ------------------->Kubernetes Secret----------------->Inress Controller
+
+
+Two Challenge types
+===================
+1.HTTP 1
+2.DNS 1
+
+The challenge is to prove the ownership of the domain.
+Cert manager utillize the the ingress controller to serve challenge token.
+
+Cert manager store the certificate in kubernetes secret.
+
+HTTP 01 challenge
+=================
+
+ACME client in customer premises request a certificate for a domain.
+CA server provides a token and asks to place it in well known path
+ACME client ask the webserver to place the file in the desired path with desired content
+ACME notifies CA server file is in place.
+CA server retrive the file from well known path
+if the file is retrieved and the content is same domain ownership is proved.
