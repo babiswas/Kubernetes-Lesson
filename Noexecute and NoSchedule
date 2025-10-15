@@ -7,5 +7,14 @@ Impact on scheduling: This effect prevents new pods that do not have a matching 
 Impact on running pods: It does not evict or affect pods that are already running on the node at the time the taint is applied, even if those pods do not have a matching toleration.
 Use case: Typically used to dedicate nodes for specific workloads, like GPU nodes, where only pods requiring those resources should be scheduled.
 
+NoExecute
+=========
+Impact on scheduling: Similar to NoSchedule, new pods without a matching toleration will not be scheduled on the tainted node.
+Impact on running pods: This is the key difference. NoExecute will evict any pods already running on the node that do not have a matching toleration for the taint. Pods with a matching toleration might also be evicted if tolerationSeconds is specified in their toleration, allowing them to remain on the node for a limited duration.
+Use case: Often employed for maintenance operations or when a node becomes unhealthy, ensuring that affected pods are removed and rescheduled elsewhere.
+
+
+
+
 
 
