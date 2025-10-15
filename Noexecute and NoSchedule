@@ -1,3 +1,11 @@
 Noexecute and NoSchedule
 ========================
 
+NoSchedule
+==========
+Impact on scheduling: This effect prevents new pods that do not have a matching toleration from being scheduled onto the tainted node.
+Impact on running pods: It does not evict or affect pods that are already running on the node at the time the taint is applied, even if those pods do not have a matching toleration.
+Use case: Typically used to dedicate nodes for specific workloads, like GPU nodes, where only pods requiring those resources should be scheduled.
+
+
+
