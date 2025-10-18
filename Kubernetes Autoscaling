@@ -17,5 +17,8 @@ Metric Server <-------------kubelet <--------Pods(C Adviser agent)
     |
 Api server
     |
-HPA controller
+HPA controller(increase replica count)
+
+
+
 
