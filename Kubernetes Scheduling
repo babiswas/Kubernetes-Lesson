@@ -28,6 +28,13 @@ Fine points
 >Taint is applied at the node.
 >Toleration is applied at the pod.
 
+Taints
+=======
+1.Noschedule
+2.Prefer Noschedule
+3.No execute
+
+
 
 
 
