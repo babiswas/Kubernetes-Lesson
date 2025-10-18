@@ -9,6 +9,6 @@ This is how kubernetes find the best node for the pod.
 Instructing kubernetes Scheduler
 ================================
 1.NodeSelector
-2.
+2.Nodename
 
 
