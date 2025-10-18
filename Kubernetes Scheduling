@@ -6,9 +6,11 @@ Kubernetes Scheduling
 
 This is how kubernetes find the best node for the pod.
 
+We can add labels to our nodes.
+
 Instructing kubernetes Scheduler
 ================================
-1.NodeSelector
+1.NodeSelector(label nodes)
 2.Nodename(Bypass the scheduler)
 
 
