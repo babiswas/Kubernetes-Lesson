@@ -28,7 +28,7 @@ Fine points
 >Taint is applied at the node.
 >Toleration is applied at the pod.
 
-Taints and tolerance
+Taints effect
 =====================
 1.Noschedule(Schedule pods if they can tolerate the taint.Already running pods don't get effected.)
 2.Prefer Noschedule(Schedule pods on the node if no othere node is avilable.)
