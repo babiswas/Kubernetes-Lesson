@@ -5,6 +5,6 @@ Kubernetes Autoscaling
 3.Cluster Autoscaler(CA)
 
 1.In vertical pod autoscaler we increase the resources of existing pods.
-2.
+2.Horizontal pod auto scaler scales based on resource metric of pods.
 
 
