@@ -7,4 +7,15 @@ Kubernetes Autoscaling
 1.In vertical pod autoscaler we increase the resources of existing pods.
 2.Horizontal pod auto scaler scales based on resource metric of pods.
 
+How HPA works?
+===============
+
+
+Controller                           Worker
+                                     metric
+Metric Server <-------------kubelet <--------Pods(C Adviser agent)
+    |
+Api server
+    |
+HPA controller
 
