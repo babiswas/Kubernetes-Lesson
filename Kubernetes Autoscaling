@@ -19,6 +19,8 @@ Api server
     |
 HPA controller(increase replica count)
 
+Kubectl top pods(To obtain resource utillisation.)
+
 
 
 
