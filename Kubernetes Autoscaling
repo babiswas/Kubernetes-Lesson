@@ -25,6 +25,8 @@ Vertical pod autoscaler
 =======================
 In VPA the VPA recommends resource requirements and to follow the recommendation is optional.
 
+When pods are in pending state due to lack of resources than Cluster autoscaler allocate more nodes for scheduling.
+
 
 
 
