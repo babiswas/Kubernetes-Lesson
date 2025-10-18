@@ -21,6 +21,10 @@ HPA controller(increase replica count)
 
 Kubectl top pods(To obtain resource utillisation.)
 
+Vertical pod autoscaler
+=======================
+In VPA the VPA recommends resource requirements and to follow the recommendation is optional.
+
 
 
 
