@@ -12,5 +12,6 @@ Instructing kubernetes Scheduler
 ================================
 1.NodeSelector(label nodes)
 2.Nodename(Bypass the scheduler)
+3.Node affinity
 
 
