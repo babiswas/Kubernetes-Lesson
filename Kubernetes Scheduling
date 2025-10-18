@@ -15,6 +15,7 @@ Instructing kubernetes Scheduler
 3.Node affinity
    a)Node affinity
    b)Pod affinity
+4)Prefrence
 
 NodeAffinity:Required during scheduling and ignored during execution means,during scheduling the labels should be there in the node.Don't disturb the running pods if the labels are not there in the node.
 Node affinity is useful for labels having complex expression.
