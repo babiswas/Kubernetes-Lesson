@@ -20,3 +20,5 @@ NodeAffinity:Required during scheduling and ignored during execution means,durin
 Node affinity is useful for labels having complex expression.
 
 
+
+
