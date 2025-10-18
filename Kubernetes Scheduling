@@ -19,9 +19,16 @@ Instructing kubernetes Scheduler
 5)Pod affinity
 6)Taints and tolerations.
 
-NodeAffinity:Required during scheduling and ignored during execution means,during scheduling the labels should be there in the node.Don't disturb the running pods if the labels are not there in the node.
-Node affinity is useful for labels having complex expression.
-Pod affinity usecase when two services interact with each other frequently then they should be nearby.Pod affinity helps there.In short pod affinity helps in colocation.
+
+Fine points
+============
+>NodeAffinity:Required during scheduling and ignored during execution means,during scheduling the labels should be there in the node.Don't disturb the running pods if the labels are not there in the node.
+>Node affinity is useful for labels having complex expression.
+>Pod affinity usecase when two services interact with each other frequently then they should be nearby.Pod affinity helps there.In short pod affinity helps in colocation.
+>Taint is applied at the node.
+>Toleration is applied at the pod.
+
+
 
 
 
