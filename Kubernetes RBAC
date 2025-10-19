@@ -40,6 +40,20 @@ rules:
 Maniofest for role binding
 =========================
 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: demo-role-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: demo-role
+subjects:
+  - namespace: default
+    kind: ServiceAccount
+    name: demo-user
+
 
 
 
