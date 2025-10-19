@@ -15,6 +15,7 @@ If the user provides a certificate signed by a valid certifcate authority than u
 using above info.
 
 openssl x509 -req -CA ~/.minikube/ca.crt -CAkey ~/.minikube/ca.key -CAcreateserial -days 730 -in zyz.csr -out xyz.crt
+kubectl config set-credentials xyz --client-certificate=xyz.crt --client-key=xyz.key
 
 
 
