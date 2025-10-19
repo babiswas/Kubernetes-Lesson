@@ -1,1 +1,8 @@
+Kubernetes Daermonset
+====================
+Daemonset are used to collect metrices from each node in the cluster.
+node exporter is used to collect the metrices from each node.
+This metrices are monitored for mantainence.
+Daemonset ensure a pod runs on each cluster.
+
 
