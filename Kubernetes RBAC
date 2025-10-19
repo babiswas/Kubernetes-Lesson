@@ -54,6 +54,9 @@ subjects:
     kind: ServiceAccount
     name: demo-user
 
+When a namespace is created a default service account gets created in the namespace.
+
+
 
 
 
