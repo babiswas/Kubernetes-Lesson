@@ -18,6 +18,29 @@ openssl x509 -req -CA ~/.minikube/ca.crt -CAkey ~/.minikube/ca.key -CAcreateseri
 kubectl config set-credentials xyz --client-certificate=xyz.crt --client-key=xyz.key
 kubectl config set-context xyz --cluster=xyz-cluster --user=xyz --namespace=default
 
+Manifest for role.
+===================
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: demo-role
+  namespace: default
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+      - create
+      - update
+
+Maniofest for role binding
+=========================
+
+
 
 
 
