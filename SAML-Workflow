@@ -29,6 +29,15 @@ Service provider functionality
 2.Validate saml response and based on validation allow/deny access to protected resource.
 3.SP registers a callback url for saml assertion validation,this service is called assertion consumer service(ACS)
 
+IDP initiated auth
+==================
+1.user log in to IDP
+2.user log in to application
+3.application generate saml request
+4.user execute the request and obtain saml response without authentication
+5.saml response forwarded to application
+6.ACS validate saml response and makes the application accessible to the user.
+
 
 
 
