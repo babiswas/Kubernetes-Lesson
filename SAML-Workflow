@@ -1,0 +1,28 @@
+SAML Workflow
+==============
+1.SP initiated authentication.
+2.IDP imnitiated authentication.
+
+WorkFlow
+=========
+
+SP Initiated authentication.
+==============================
+1.user try to access the app(Service provider)
+2.The application detects the domain and generate a saml request to browser
+3.Browser forward the saml request to IDP
+4.IDP provides the login screen
+5.User provide credential and request authentication
+6.IDP authenticate and forward saml response.
+7.Browser forward the saml response to application
+8.Application forward the saml assertion to Assertion consumer service(ACS)
+9.ACS validates the assetion and inform application
+10.Application provide the protective resource to the browser.
+
+IDP:Okta,Auth0
+
+
+
+
+          
+
