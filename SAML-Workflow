@@ -24,6 +24,10 @@ IDP:Okta,Auth0
 Current version of saml is 2.0
 ===============================
 
+Service provider functionality 
+1.Generate saml request
+2.Validate saml response and based on validation allow/deny access to protected resource.
+
 
 
 
