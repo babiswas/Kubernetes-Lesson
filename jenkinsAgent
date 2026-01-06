@@ -24,6 +24,15 @@ When we connect to remote machine the known-hosts file is searched to match the 
 State of applications are always stored in /var/lib directory.
 /var/lib directory in linux.
 
+Methods to launch agents
+========================
+1.Launch agent by ssh(outbound)
+2.Launch agent by connecting it to the master.(inbound)
+3.Launch agent by execution of command in the controller.
+
+Above three the methods to launch the jenkins agent.
+
+
 
 
 
