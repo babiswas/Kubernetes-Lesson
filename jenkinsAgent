@@ -6,3 +6,8 @@ Jenkins agent we can scale horizontally.
 Any type of machine that can run java can be a jenkins agent.
 
 
+Create an agent node in jenkins
+===============================
+
+
+
