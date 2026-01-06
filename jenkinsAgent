@@ -19,5 +19,11 @@ The finger print of the public keys are stored in ~/.ssh/known-hosts file.
 When we connect to remote machine the known-hosts file is searched to match the public key finger print presented by the remote machine.
 
 
+/var/lib
+==========
+State of applications are always stored in /var/lib directory.
+/var/lib directory in linux.
+
+
 
 
