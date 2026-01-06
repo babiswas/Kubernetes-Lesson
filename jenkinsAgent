@@ -3,5 +3,6 @@ JenkinsAgent.
 Jenkins controller administer the job,pipelines,UI credentials.
 Jenkins agent execute the build steps.
 Jenkins agent we can scale horizontally.
+Any type of machine that can run java can be a jenkins agent.
 
 
