@@ -32,6 +32,9 @@ Methods to launch agents
 
 Above three the methods to launch the jenkins agent.
 
+chown -R jenkins:jenkins /var/lib/jenkins/.ssh/known_hosts
+
+
 
 
 
