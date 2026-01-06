@@ -9,5 +9,15 @@ Any type of machine that can run java can be a jenkins agent.
 Create an agent node in jenkins
 ===============================
 
+known hosts file
+=================
+client----------------------ssh---------server
+(Known hosts)
+The known hosts file contains all the finger print of the public keys of the remote machines.
+When the keys dont match than the client machine shows promt that the host is unknown.
+The finger print of the public keys are stored in ~/.ssh/known-hosts file.
+When we connect to remote machine the known-hosts file is searched to match the public key finger print presented by the remote machine.
+
+
 
 
