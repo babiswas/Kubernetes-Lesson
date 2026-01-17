@@ -1,0 +1,10 @@
+1.the select block in golang wait for atleast one channel to be in ready state.Once ready it will consume the data from the ready channel and finish.
+
+func validateRequest(ctx context.Context) (string, error) {
+	select {
+	case <-time.After(9 * time.Second):
+		return "success", nil
+	case <-ctx.Done():
+		return "", ctx.Err()
+	}
+}
