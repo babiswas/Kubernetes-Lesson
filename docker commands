@@ -1,0 +1,6 @@
+docker build -t image-name .
+docker run -d -p 8080:8080 image-name
+docker ps
+docker image ls
+docker rmi -f container_id
+  
