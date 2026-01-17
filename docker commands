@@ -3,4 +3,5 @@ docker run -d -p 8080:8080 image-name
 docker ps
 docker image ls
 docker rmi -f container_id
+docker exec -it conatiner_id /bin/sh
   
