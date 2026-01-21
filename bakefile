@@ -48,6 +48,38 @@ target "service1" {
   tags = ["myorg/service1:latest"]
 }
 
+
+
+Docker multi stage builds
+=========================
+
+# Dockerfile
+FROM golang:1.17 as builder
+WORKDIR /go/src/app
+COPY . .
+RUN go build -o myapp
+
+FROM alpine:latest
+COPY --from=builder /go/src/app/myapp /usr/local/bin/
+CMD ["myapp"]
+
+
+Multiplatform image
+====================
+
+group "default" {
+  targets = ["multiarch"]
+}
+
+target "multiarch" {
+  context = "./"
+  dockerfile = "Dockerfile"
+  platforms = ["linux/amd64", "linux/arm64"]
+  tags = ["myorg/multiarch:latest"]
+  push = true
+}
+
+
 target "service2" {
   context = "./service2"
   dockerfile = "./service2/Dockerfile"
@@ -55,13 +87,19 @@ target "service2" {
 }
 
 
-docker buildx version
-
 
 Enviroment Variables to be enabled
 ==================================
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
+
+
+
+
+QEMU Configuration
+==================
+docker buildx create --use
+docker buildx version
 
 
 
@@ -98,3 +136,98 @@ target "frontend" {
   dockerfile = "frontend/Dockerfile"
   tags = ["myorg/frontend:latest"]
 }
+
+
+
+
+Docker Compose
+==============
+
+version: "3.8"
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    image: myorg/web:latest
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    image: myorg/db:latest
+
+
+
+docker buildx bake
+
+
+
+target "my-cached-app" {
+  context = "./"
+  dockerfile = "Dockerfile"
+  tags = ["myorg/my-cached-app:latest"]
+  cache-from = ["type=registry,ref=myorg/my-cached-app:cache"]
+  cache-to   = ["type=registry,ref=myorg/my-cached-app:cache,mode=max"]
+}
+
+
+BuildKit supports passing secrets at build time without committing them to your final image.
+
+# syntax=docker/dockerfile:1.4
+FROM alpine:latest
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+
+
+
+
+Secret file Mounting
+====================
+
+# syntax=docker/dockerfile:1.4
+FROM alpine:latest
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+
+
+
+
+target "secret-target" {
+  context = "./"
+  dockerfile = "Dockerfile"
+  secrets = ["id=mysecret,src=./secretfile"]
+}
+
+
+docker buildx bake
+
+Build Arguments
+================
+
+
+target "custom-args" {
+  context = "./"
+  dockerfile = "Dockerfile"
+  args = {
+    ENV = "production"
+    API_URL = "https://api.example.com"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
