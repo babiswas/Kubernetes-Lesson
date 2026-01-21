@@ -1,0 +1,100 @@
+Docker Bake file
+================
+Scalable approach to building docker image.
+
+docker buildx bake -f docker-bake.hcl
+
+Parallel Execution
+==================
+Bake can build multiple images simultaneously.
+
+1.Groups
+2.Runtime Arguments
+3.Security and Isolation
+4.Better Performance
+
+
+docker build -t image-tag directory-path
+docker run -d -p x1:x2 image-tag
+
+BuildKit Advantage
+==================================
+Improved Parallelization
+Remote Caching
+Better Logging and Tracing
+Build Secrets and SSH Forwarding
+
+
+Group---->Collection of targets.
+Target---->Specific image build
+Context--->Directory from which docker read files.
+
+docker buildx bake -f xyz.hcl executed by buildkit
+
+Configuration types
+==================
+docker-bake.hcl
+docker-bake.yaml
+docker-bake.json
+
+
+group "default" {
+  targets = ["service1", "service2"]
+}
+
+target "service1" {
+  context = "./service1"
+  dockerfile = "./service1/Dockerfile"
+  tags = ["myorg/service1:latest"]
+}
+
+target "service2" {
+  context = "./service2"
+  dockerfile = "./service2/Dockerfile"
+  tags = ["myorg/service2:latest"]
+}
+
+
+docker buildx version
+
+
+Enviroment Variables to be enabled
+==================================
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
+
+
+variable "VERSION" {
+  default = "1.0.0"
+}
+
+target "myapp" {
+  context = "./"
+  dockerfile = "Dockerfile"
+  args = {
+    VERSION = "${VERSION}"
+  }
+  tags = ["myorg/myapp:${VERSION}"]
+}
+
+
+docker buildx bake --set myapp.VERSION=2.0.0
+
+
+
+group "default" {
+  targets = ["backend", "frontend"]
+}
+
+target "backend" {
+  context = "backend"
+  dockerfile = "backend/Dockerfile"
+  tags = ["myorg/backend:latest"]
+}
+
+target "frontend" {
+  context = "frontend"
+  dockerfile = "frontend/Dockerfile"
+  tags = ["myorg/frontend:latest"]
+}
