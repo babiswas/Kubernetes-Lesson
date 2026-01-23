@@ -1,5 +1,14 @@
 To generate certificate using server.key
+==========================================
 openssl req -x509 -new -key server.key -out server.crt -sha256 -days 100
 
 To generate server.key 
-openssl genrsa -out server.key 2048
+=========================
+openssl genrsa -out server.key 2048(Private key)
+
+
+Command to create client.crt using CA certificate and key.
+==========================================================
+openssl genrsa -out client.key 2048
+openssl req -new -key client.key -out client.csr -subj "/CN=myapp"
+openssl x509 -req -in client.csr -CA server.crt -CAkey client.key -CAcreateserial -out client.crt -days 1000 -sha256 -extfile san.txt
