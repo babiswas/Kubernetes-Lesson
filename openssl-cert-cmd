@@ -1,0 +1,5 @@
+To generate certificate using server.key
+openssl req -x509 -new -key server.key -out server.crt -sha256 -days 100
+
+To generate server.key 
+openssl genrsa -out server.key 2048
