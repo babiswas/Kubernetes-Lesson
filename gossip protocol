@@ -1,0 +1,6 @@
+Gossip Protocol
+================
+Apache Zookeeper
+Centrallized state management service.
+state of the node(live,dead)
+Apache zookeeper as state management service.
