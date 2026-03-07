@@ -26,6 +26,9 @@ The kafka cluster has nodes called brokers which handle
 Streams of events are categorized as topic.Kafka topic.Topics can be partitioned.Not associated with one node but number of nodes.
 A topic contained multiple logs and the same topic is associated with number of partitions which reside in different computers.
 
+         |---------------Topic1-----------[p1,p0,p4](partitions)
+Kafka----|---------------Topic2----------[p2,p3]
+         |----------------Topic3---------[p1,p2,p0]
 
 
 
