@@ -35,7 +35,5 @@ Broker------------Automatic Cert-------------encryption service:
            |                     |
           DB                    HSM
 
-
-
-
+The encryption service is required to encrypt the private key associated with CA.
 
