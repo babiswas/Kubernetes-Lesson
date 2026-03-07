@@ -38,3 +38,7 @@ Consumer in consumer group is tied to a partition.
 
 In traditional message queue the retention period is not configurable,same is true for kafka.
 
+
+Amazon SQS
+============
+
