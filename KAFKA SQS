@@ -22,3 +22,6 @@ The kafka cluster has nodes called brokers which handle
 1.Data storage
 2.Data replication
 3.Serve client request
+
+Streams of events are categorized as topic.Kafka topic.
+
