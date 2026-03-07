@@ -17,10 +17,18 @@ brkr-------------->Reverse Proxy---------->application
 
 Inspection Pipeline
 ====================
+
+            [Traffic]===========[CACHE]==============================[app]
                
                                          |=================[ HTTP ]========================================
              [Traffic ]===CACHE----------|=====[HTTPS]===========[SSL TERMINATION]=======[INSPECT]======== [SSL/HTTP/OTHER]==========[app]
                                          |==========[OTHER]=================================================
+
+HTTPS traffic
+1.domain,port,protocol is not encrypted
+2.url path,query parameter,header,payload are encrypted.
+
+
 
 
 
