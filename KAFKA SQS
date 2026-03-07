@@ -36,3 +36,5 @@ Partitions allow events to be scaled horizontally.
 Consumers can be organized into consumer groups.
 Consumer in consumer group is tied to a partition.
 
+In traditional message queue the retention period is not configurable,same is true for kafka.
+
