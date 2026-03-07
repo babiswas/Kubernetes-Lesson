@@ -1,0 +1,15 @@
+Certificate generation process
+==============================
+CA(Certificate,private key)
+Private key is required to sign the CSR.
+Public key is available to clients
+
+Cert Gen Client
+================
+CSR(indentity info,public key)
+CSR is submitted to CA and CA performs validation and issue certificate.
+
+The CA should be trusted by the cliients who will verify the certificate issued by the server.
+
+
+
