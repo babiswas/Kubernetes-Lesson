@@ -9,3 +9,16 @@ KFKA-->Event streaming platform.
 
 KAFKA Concepts
 ==============
+
+Event data
+{
+"key":"",
+"value":"",
+"timestamp":""
+"metadata":""
+}
+
+The kafka cluster has nodes called brokers which handle
+1.Data storage
+2.Data replication
+3.Serve client request
