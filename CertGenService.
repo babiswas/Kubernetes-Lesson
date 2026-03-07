@@ -28,6 +28,12 @@ HTTPS traffic
 1.domain,port,protocol is not encrypted
 2.url path,query parameter,header,payload are encrypted.
 
+Broker------------Automatic Cert-------------encryption service:
+                     |
+                     |
+           ------------------------
+           |                     |
+          DB                    HSM
 
 
 
