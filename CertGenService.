@@ -13,3 +13,15 @@ The CA should be trusted by the cliients who will verify the certificate issued 
 
 
 
+brkr-------------->Reverse Proxy---------->application
+
+Inspection Pipeline
+====================
+               
+                                         |=================[ HTTP ]========================================
+             [Traffic ]===CACHE----------|=====[HTTPS]===========[SSL TERMINATION]=======[INSPECT]======== [SSL/HTTP/OTHER]==========[app]
+                                         |==========[OTHER]=================================================
+
+
+
+
