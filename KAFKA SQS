@@ -31,9 +31,8 @@ Kafka----|---------------Topic2----------[p2,p3]
          |----------------Topic3---------[p1,p2,p0]
 
 if the message has key it helps in knowing which partition the message reside else the message is distributed among partition in round robin fashion.
+Partitions allow events to be scaled horizontally.
 
-
-i 
 
 
 
