@@ -38,6 +38,15 @@ Consumer in consumer group is tied to a partition.
 
 In traditional message queue the retention period is not configurable,same is true for kafka.
 
+Consider apache kafka if
+========================
+1.High throughput
+2.Low latency
+3.Real time stream processing and analytics.
+4.Long term message retention
+5.Fine grained control
+6.Handling millions of events per second.
+
 
 Amazon SQS
 ============
