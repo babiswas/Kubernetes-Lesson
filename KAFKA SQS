@@ -33,6 +33,6 @@ Kafka----|---------------Topic2----------[p2,p3]
 if the message has key it helps in knowing which partition the message reside else the message is distributed among partition in round robin fashion.
 Partitions allow events to be scaled horizontally.
 
-
-
+Consumers can be organized into consumer groups.
+Consumer in consumer group is tied to a partition.
 
