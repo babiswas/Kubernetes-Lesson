@@ -163,4 +163,7 @@ kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
 kubectl rollout status deployment/nginx-deployment
 
 
+pod-template-hash is used to identify which template the pod belongs to.
+
+
 
