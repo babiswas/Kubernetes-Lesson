@@ -5,3 +5,6 @@ Purpose of replicaset is to mantain stable set of pods.
 
 Deployment ----->manage------> Replicaset -------->manage--------> pods(set of pods)
 
+1.Selector is used to identify the pods it wants to manage.
+2.Replica count tells how many pods it can manage.
+
