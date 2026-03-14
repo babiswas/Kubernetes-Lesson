@@ -45,12 +45,103 @@ Maximum number of pods which can be created over the desired number of pods is c
 if the maxsurge is 30% than the total number of pods will be 130% of the desired pods.
 
 
+Rolling update deployment
+=========================
+Deployment update pods in rolling update fashion.
+gradually scale down the old ReplicaSets and scale up the new one
+
+Max Unavailable
+================
+This can be a percentage of the maximum number of pods.
 
 
+Maximum unavailabe
+===================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+ labels:
+   app: nginx
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: nginx
+ template:
+   metadata:
+     labels:
+       app: nginx
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxSurge: 1
+     maxUnavailable: 1
 
 
+Max Surge
+==========
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+ labels:
+   app: nginx
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: nginx
+ template:
+   metadata:
+     labels:
+       app: nginx
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxSurge: 1
 
 
+Hybrid
+=======
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+ labels:
+   app: nginx
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: nginx
+ template:
+   metadata:
+     labels:
+       app: nginx
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxSurge: 1
+     maxUnavailable: 1
 
 
 
