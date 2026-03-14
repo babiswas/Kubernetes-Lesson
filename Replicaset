@@ -8,3 +8,5 @@ Deployment ----->manage------> Replicaset -------->manage--------> pods(set of p
 1.Selector is used to identify the pods it wants to manage.
 2.Replica count tells how many pods it can manage.
 
+Replicaset use the pod templates rto create the pods.
+
