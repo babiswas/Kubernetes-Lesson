@@ -9,4 +9,5 @@ Deployment ----->manage------> Replicaset -------->manage--------> pods(set of p
 2.Replica count tells how many pods it can manage.
 
 Replicaset use the pod templates rto create the pods.
+Selector field helps replicaset to identify the pods it want's to manage.
 
