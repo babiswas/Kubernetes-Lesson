@@ -36,3 +36,30 @@ spec:
           value: "production"
         - name: LOG_LEVEL
           value: "info"
+
+========================================================================
+Max Surge
+==========
+What is max surge?
+Maximum number of pods which can be created over the desired number of pods is called max surge.
+if the maxsurge is 30% than the total number of pods will be 130% of the desired pods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
