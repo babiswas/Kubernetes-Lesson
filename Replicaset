@@ -1,2 +1,5 @@
 Replicaset
 ============
+A replicaset is a kubernetes workload.
+Purpose of replicaset is to mantain stable set of pods.
+
