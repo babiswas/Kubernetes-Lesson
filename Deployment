@@ -159,6 +159,4 @@ kubectl patch deployment/nginx-deployment -p '{"spec":{"progressDeadlineSeconds"
 
 kubectl scale deployment/nginx-deployment --replicas=10
 kubectl autoscale deployment/nginx-deployment --min=10 --max=15 --cpu-percent=80
-
-
-
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
