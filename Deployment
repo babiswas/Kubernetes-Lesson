@@ -166,4 +166,7 @@ kubectl rollout status deployment/nginx-deployment
 pod-template-hash is used to identify which template the pod belongs to.
 
 
+Deployment------manage-----Replicaset-----------manage--------pods.
+
+
 
