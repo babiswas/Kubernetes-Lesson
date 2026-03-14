@@ -1,6 +1,6 @@
 Deployment in kubernetes
 ========================
-
+A Deployment controller is a kubernetes workload.
 Deployment is used to manage stateless application.
 
 
