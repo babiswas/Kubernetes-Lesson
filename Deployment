@@ -153,11 +153,7 @@ Limit ranges
 Application runtime misconfiguration
 
 
-
-
-
-
-
+if the duration of deployment exceeds the progress deadline seconds than it will consider the deployment as stalled.
 
 
 
