@@ -25,6 +25,11 @@ Update strategy for the pod is 1.Rolling update 2.Ondelete
 if set to ondelete than manual delete is rtequired for new pod creation.
 
 
+If a HorizontalPodAutoscaler (or any similar API for horizontal scaling) is managing scaling for a Statefulset, don't set .spec.replicas. Instead, allow the Kubernetes control plane to manage the .spec.replicas field automatically.
+
+
+
+
 Pod management policy parallel
 ==============================
 
