@@ -34,3 +34,6 @@ kubectl apply -f https://k8s.io/examples/controllers/hpa-rs.yaml
  Set preferrence for which pod to delete first controller.kubernetes.io/pod-deletion-cost.
 controller.kubernetes.io/pod-deletion-cost is an annotation in Kubernetes used to influence which Pod should be deleted first when scaling down a workload like a Kubernetes ReplicaSet or Kubernetes Deployment.
 It lets you assign a priority (cost) to Pods, telling Kubernetes which Pods are more or less preferable to delete.
+
+
+Deployment manages the replicasets
