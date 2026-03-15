@@ -1,6 +1,6 @@
 Statefulset
 ===========
-A statefulset is a kubernetes workfload.
+A statefulset is a kubernetes workfload.A stateful set is useful for the applications which need persistant storage or unique network identity.
 
 Deployment
 Statefulset
