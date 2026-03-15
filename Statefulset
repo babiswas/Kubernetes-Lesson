@@ -7,6 +7,23 @@ Deployment
 Statefulset
 Deamonset
 
+1.Pods are created sequentially in statefulset.(0,1,2...N-1)
+2.Pods are destroyed in reverse order.
+
+
+Pod management policy
+======================
+
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 3
+
+
+
+
 1.Stable unique network identifiers.
 2.Stable persistant storage
 3.Ordered graceful deployment
