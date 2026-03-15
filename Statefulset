@@ -168,7 +168,8 @@ Persistant volume claim retention policy in stateful set
 =========================================================
 1.whendeleted
 2.whenscaled
-3.Delete
+
+values Retain/delete.
 
 
 
