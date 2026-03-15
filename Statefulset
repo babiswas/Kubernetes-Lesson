@@ -118,6 +118,14 @@ spec:
           storage: 1Gi
 
 
+Statefulset exposed using headless service
+pod dns is:
+ pd-name.service-name.namespace.svc.cluster.local
+ service-name.namespace.svc.cluster.local
+
+Each pod receives one persitant volume claim.
+
+
 
 
 
