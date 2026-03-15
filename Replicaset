@@ -27,4 +27,5 @@ spec:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50
 
-
+kubectl autoscale rs frontend --max=10 --min=3 --cpu=50%
+kubectl apply -f https://k8s.io/examples/controllers/hpa-rs.yaml
