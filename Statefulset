@@ -164,6 +164,15 @@ Each pod receives one persitant volume claim.
 labels in the stateful set is used to select the pod.
 
 
+Persistant volume claim retention policy in stateful set
+=========================================================
+1.whendeleted
+2.whenscaled
+3.Delete
+
+
+
+
 
 
 
