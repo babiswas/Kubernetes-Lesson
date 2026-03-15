@@ -1,6 +1,7 @@
 Statefulset
 ===========
 A statefulset is a kubernetes workfload.A stateful set is useful for the applications which need persistant storage or unique network identity.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of its Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
 Deployment
 Statefulset
