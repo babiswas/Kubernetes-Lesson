@@ -21,6 +21,9 @@ spec:
   podManagementPolicy: OrderedReady
   replicas: 3
 
+Update strategy for the pod is 1.Rolling update 2.Ondelete
+if set to ondelete than manual delete is rtequired for new pod creation.
+
 
 Pod management policy parallel
 ==============================
