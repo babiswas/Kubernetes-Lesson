@@ -1,5 +1,7 @@
 Statefulset
 ===========
+A statefulset is a kubernetes workfload.
+
 Deployment
 Statefulset
 Deamonset
