@@ -22,6 +22,18 @@ spec:
   replicas: 3
 
 
+Pod management policy parallel
+==============================
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  podManagementPolicy: Parallel
+  replicas: 3
+
+
 
 
 1.Stable unique network identifiers.
