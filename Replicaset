@@ -11,3 +11,17 @@ Deployment ----->manage------> Replicaset -------->manage--------> pods(set of p
 Replicaset use the pod templates rto create the pods.
 Selector field helps replicaset to identify the pods it want's to manage.
 
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-scaler
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: frontend
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+
