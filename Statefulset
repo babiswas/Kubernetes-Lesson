@@ -172,12 +172,13 @@ Persistant volume claim retention policy in stateful set
 values Retain/delete.
 
 
-
-
-
-
-
-
+apiVersion: apps/v1
+kind: StatefulSet
+...
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Delete
 
 
 
