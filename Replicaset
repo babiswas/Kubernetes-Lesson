@@ -12,6 +12,8 @@ Replicaset use the pod templates rto create the pods.
 Selector field helps replicaset to identify the pods it want's to manage.
 
 
+A replicaset can also be a target of horizontal pod autoscaler.
+
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -24,4 +26,5 @@ spec:
   minReplicas: 3
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50
+
 
