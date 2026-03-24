@@ -5,4 +5,6 @@ node exporter is used to collect the metrices from each node.
 This metrices are monitored for mantainence.
 Daemonset ensure a pod runs on each cluster.
 
+Tolerations is always at the pod side and taint is something which happens at the pod side.
+
 
