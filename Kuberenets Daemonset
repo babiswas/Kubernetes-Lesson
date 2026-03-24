@@ -5,6 +5,14 @@ node exporter is used to collect the metrices from each node.
 This metrices are monitored for mantainence.
 Daemonset ensure a pod runs on each cluster.
 
-Tolerations is always at the pod side and taint is something which is applied at the node side
+Tolerations is always at the pod side and taint is something which is applied at the node side.
+
+ # remove them if your control plane nodes should not run pods
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
 
 
