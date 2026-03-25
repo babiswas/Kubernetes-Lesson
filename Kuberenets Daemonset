@@ -62,6 +62,10 @@ spec:
       volumes:
       - name: varlog
         hostPath:
+
+.spec.template.spec.nodeSelector
+.spec.template.spec.affinity  
+for deploying daemonset on specific nodes.This attributes should be there in the template
           path: /var/log
 
 
