@@ -1,1 +1,3 @@
-
+The vertical pod autoscaler update the workload management about request and limit.
+It prevents wastage of cluster resources
+It helps the workload management with resources when required and prevents workload from getiing killed due to OOM issue.
