@@ -6,3 +6,5 @@ It helps the workload management with resources when required and prevents workl
 From metric server recommendation is stored in VPA by a VPA recommender
 Using updater check for pod updates
 Evicts pod or update in place.
+
+Vertical pod autoscaler controls the request and limit of the pod in deployment.
