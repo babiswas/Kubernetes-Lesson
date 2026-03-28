@@ -3,3 +3,6 @@ Vertical pod autoscaler
 The vertical pod autoscaler update the workload management about request and limit.
 It prevents wastage of cluster resources
 It helps the workload management with resources when required and prevents workload from getiing killed due to OOM issue.
+From metric server recommendation is stored in VPA by a VPA recommender
+Using updater check for pod updates
+Evicts pod or update in place.
