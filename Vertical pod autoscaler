@@ -8,6 +8,7 @@ Using updater check for pod updates
 Evicts pod or update in place.
 
 Vertical pod autoscaler controls the request and limit of the pod in deployment.
+Respond to increased resource demand with more resources.
 
 Vertical pod autoscaler has three parts
 =======================================
