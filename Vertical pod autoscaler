@@ -16,7 +16,13 @@ Vertical pod autoscaler has three parts
 3.VPA admission controller
 
 Recommnder analyze resource request and recommends
-Recommender queries the resource utillisation of pods targeted by the VPA definition
+Recommender queries the resource utillisation of pods targeted by the VPA definition.
+
+Historical consumption patterns over time to identify trends
+Peak usage and variance to ensure sufficient headroom
+Out-of-memory (OOM) events and other resource-related incidents
+
+
 
 
 ---
