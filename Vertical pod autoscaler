@@ -8,3 +8,25 @@ Using updater check for pod updates
 Evicts pod or update in place.
 
 Vertical pod autoscaler controls the request and limit of the pod in deployment.
+
+Vertical pod autoscaler has three parts
+=======================================
+1.Recommender
+2.Updater
+3.VPA admission controller
+
+Recommnder analyze resource request and recommends
+
+
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-app-vpa
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: my-app
+  updatePolicy:
+    updateMode: "Recreate"  # Off, Initial, Recreate, InPlaceOrRecreate
