@@ -23,6 +23,16 @@ Peak usage and variance to ensure sufficient headroom
 Out-of-memory (OOM) events and other resource-related incidents
 
 
+Based on this analysis, the Recommender calculates three types of recommendations:
+
+Target recommendation (optimal resources for typical usage)
+Lower bound (minimum viable resources)
+Upper bound (maximum reasonable resources).
+
+
+
+
+
 
 
 ---
