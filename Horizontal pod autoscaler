@@ -3,3 +3,66 @@ Horizontal pod autoscaler
 In Kubernetes, a HorizontalPodAutoscaler automatically updates a workload resource (such as a Deployment or StatefulSet), with the aim of automatically scaling capacity to match demand.
 The controller manager queries the resource utilization against the metrics specified in each HorizontalPodAutoscaler definition. The controller manager finds the target resource defined by the scaleTargetRef, then selects the pods based on the target resource's .spec.selector labels, and obtains the metrics from either the resource metrics API (for per-pod resource metrics), or the custom metrics API
 
+HPA
+===
+Automatically scale capacity to match demand.
+Response to increase load is deploy more pods.
+
+For VPA the response to demand is more resource.
+Scale down the number of pods when demand decrease.
+
+HPA doesn't apply to objects which can't be scaled.
+
+
+minikube addons enable metrics-server
+kubectl version
+
+
+ Kubernetes Metrics Server collects resource metrics from the kubelets in your cluster, and exposes those metrics through the Kubernetes API
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+
+
+kubectl autoscale command
+=============================
+HPA controller
+
+
+kubectl autoscale deployment php-apache --cpu=50% --min=1 --max=10
+kubectl get hpa
+
