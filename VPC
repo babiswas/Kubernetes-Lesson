@@ -1,0 +1,2 @@
+The scope of VPC is region(USA ,Europe,Mumbai)
+The scope of subnet(Datacenter) is availibility zone within a region.
