@@ -4,4 +4,7 @@ The scope of subnet(Datacenter) is availibility zone within a region.
 2.Routing Table(region)
 3.Security Group(region)
 VPC endpoint:To communicate with AWS resource if we have to route traffic through AWS use VPC endpoint.
+Attach internet gateway to VPC
+Attach route table with VPC
+
 
