@@ -8,5 +8,6 @@ Attach internet gateway to VPC
 Attach route table with VPC
 
 A subnet associated with Internet gateway is the public subnet.
+Associate the route table with subnet.
 
 
