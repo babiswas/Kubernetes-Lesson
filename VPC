@@ -10,4 +10,6 @@ Attach route table with VPC
 A subnet associated with Internet gateway is the public subnet.
 Associate the route table with subnet.
 
+To access ec2 instance in public subnet the privatekey should be there in the local from where acess is required.
+
 
