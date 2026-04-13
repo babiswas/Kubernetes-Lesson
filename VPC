@@ -7,4 +7,6 @@ VPC endpoint:To communicate with AWS resource if we have to route traffic throug
 Attach internet gateway to VPC
 Attach route table with VPC
 
+A subnet associated with Internet gateway is the public subnet.
+
 
