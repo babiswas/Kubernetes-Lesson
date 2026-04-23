@@ -21,5 +21,7 @@ Load balancers in market
 3.f5
 4.Nginx
 
+Type of protocol to be used for connection decide the load balancer.
+
 
 
