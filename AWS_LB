@@ -9,5 +9,9 @@ HTTP communication require ALB
 TCP communication require NLB
 
 Slowness and Downtime is bad user experience.
+Load balancer techniques
+========================
+1.Round Robin
+2.Ratio based load balancing
 
 
