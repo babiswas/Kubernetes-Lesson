@@ -1,2 +1,7 @@
 AWS load balancer
 ===================
+Three type of load balancer
+1.ALB
+2.NLB
+3.GWLB
+
