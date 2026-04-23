@@ -28,6 +28,7 @@ Firewall application
 VPN application
 
 Highly secure traffic
+NLB can provide sticky session.
 
 
 
