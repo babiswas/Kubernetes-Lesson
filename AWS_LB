@@ -22,6 +22,12 @@ Load balancers in market
 4.Nginx
 
 Type of protocol to be used for connection decide the load balancer.
+Gateway load balancer
+======================
+Firewall application
+VPN application
+
+Highly secure traffic
 
 
 
