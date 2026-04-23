@@ -5,3 +5,7 @@ Three type of load balancer
 2.NLB
 3.GWLB
 
+HTTP communication require ALB
+TCP communication require NLB
+
+
