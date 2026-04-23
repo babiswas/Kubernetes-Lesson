@@ -8,4 +8,6 @@ Three type of load balancer
 HTTP communication require ALB
 TCP communication require NLB
 
+Slowness and Downtime is bad user experience.
+
 
