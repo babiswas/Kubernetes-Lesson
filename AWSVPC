@@ -28,3 +28,36 @@ Private ipv4 adresses are not charged.
 if the EC2 is configured to automaticaly assign a public ipv4 adress than it will have one.
 
 How amazon VPC works?
+1.Region
+2.Availibility Zones
+
+a)CIDR
+4)VPC(Region)
+5)Internet Gateway
+6)Subnets(Public,Private)
+7)Routing Table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
