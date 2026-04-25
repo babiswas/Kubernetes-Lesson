@@ -47,6 +47,8 @@ VPC peering is possible
 2.Two different VPC in different region in same account
 3.Two different VPC in same region.
 
+Creating VPC peering isn't chargeable but data transfer across VPC is chargeable.
+
 
 
 
