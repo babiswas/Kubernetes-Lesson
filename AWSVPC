@@ -42,6 +42,11 @@ VPC Peering
 ============
 Two VPC can communicate with each other using VPC peering.
 
+VPC peering is possible
+1.Two different VPC in different aws account
+2.Two different VPC in different region in same account
+3.Two different VPC in same region.
+
 
 
 
