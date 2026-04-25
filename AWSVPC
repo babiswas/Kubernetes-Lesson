@@ -1,0 +1,22 @@
+Virtual Private Cloud
+=====================
+
+
+The scope of VPC is region.
+An Internet Gateway(IG) is attached to a VPC
+A subnet is a range of ip adress residing in VPC
+To deploy resources in VPC subnet is required.
+Routing table is attached to VPC to forward/accept traffic from subnets.
+IG is required for forwarding traffic to the internet.
+VPC end point for connecting to aws resources privately.
+The scope of VPC is region(us-east-1,us-east-2,us-west-2)
+
+Each region has number of availibility zones.
+Subnets can be added to VPC after creating VPC.
+
+Connect to aws vpc from on premise using VPN.
+===============================================================================================
+1.AWS Console
+2.AWS CLI
+3.AWS SDK
+4.Query API
