@@ -32,10 +32,12 @@ How amazon VPC works?
 2.Availibility Zones
 
 a)CIDR
-4)VPC(Region)
-5)Internet Gateway
-6)Subnets(Public,Private)
-7)Routing Table
+b)VPC(Region)
+c)Internet Gateway
+d)Subnets(Public,Private)
+e)Routing Table
+f)VPC endpoint
+
 
 
 
