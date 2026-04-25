@@ -26,3 +26,5 @@ IPv4 Adress
 A free tier account gets 750 hours of ipv4 adress for free.30 days ipv4 adress is free.
 Private ipv4 adresses are not charged.
 if the EC2 is configured to automaticaly assign a public ipv4 adress than it will have one.
+
+How amazon VPC works?
