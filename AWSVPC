@@ -20,3 +20,5 @@ Connect to aws vpc from on premise using VPN.
 2.AWS CLI
 3.AWS SDK
 4.Query API
+
+A free tier account gets 750 hours of ipv4 adress for free.30 days ipv4 adress is free.
