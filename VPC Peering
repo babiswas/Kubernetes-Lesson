@@ -31,6 +31,8 @@ VPC Peering Combinations
 3.Different account and same region
 4.Different account and different region
 
+VPC peering connection status goes to failed state if there is a overlapping CIDR.
+
 
 
 
