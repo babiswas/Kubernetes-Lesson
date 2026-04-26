@@ -74,14 +74,10 @@ aws ec2 create-subnet \
   --availability-zone us-east-1a \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=Public-Subnet-AZ1}]'
 
-
-
-
-
-
-
-
-
+Attaching internet gateway
+===========================
+aws ec2 create-internet-gateway \
+  --tag-specifications 'ResourceType=internet-gateway,Tags=[{Key=Name,Value=MyIGW}]'
 
 
 
