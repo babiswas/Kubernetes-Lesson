@@ -23,5 +23,5 @@ init---->Pending--->provisioning------>active
 Limitations of vpc peering
 ============================
 1.There is a vpc peering connection quota.
-2.
+2.Between 2 vpc we cannot have more than one VPC connection.
 
