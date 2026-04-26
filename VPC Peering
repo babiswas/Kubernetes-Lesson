@@ -32,6 +32,7 @@ VPC Peering Combinations
 4.Different account and different region
 
 VPC peering connection status goes to failed state if there is a overlapping CIDR.
+VPC peering request expire after 7 days.
 
 
 
