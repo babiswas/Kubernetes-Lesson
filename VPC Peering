@@ -1,2 +1,21 @@
 VPC Peering
 =============
+1.Requester of VPC peering connection
+2.Acceptor of VPC peering connection.
+
+>The owner of the acceptor VPC peering connection must accept the request for the peering connection to be active.
+>There should be no CIDR overlap between acceptor and requestor VPC
+>The security group of both the VPC should allow to flow to/from acceptor/requestor VPC
+
+VPC Peering lifecycle
+======================
+
+init---->Pending--->provisioning------>active
+                                         |
+                                         |
+                                      deleteting
+                                          |
+                                        deleted
+                                           |
+                                       no longer available
+
