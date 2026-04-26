@@ -11,8 +11,8 @@ VPC Peering lifecycle
 ======================
 
 init---->Pending--->provisioning------>active
-                                         |
-                                         |
+  |        |           |                  |
+  Failed   Expired     rejected           |
                                       deleteting
                                           |
                                         deleted
