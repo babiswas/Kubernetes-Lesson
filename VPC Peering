@@ -20,3 +20,8 @@ init---->Pending--->provisioning------>active
                                            |
                                        no longer available
 
+Limitations of vpc peering
+============================
+1.There is a vpc peering connection quota.
+2.
+
