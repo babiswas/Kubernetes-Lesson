@@ -49,6 +49,12 @@ VPC peering is possible
 
 Creating VPC peering isn't chargeable but data transfer across VPC is chargeable.
 
+VPC CIDR blocks
+=================
+1.aws configure list
+2.aws sts get-caller-identity
+
+
 
 
 
