@@ -25,3 +25,13 @@ Limitations of vpc peering
 1.There is a vpc peering connection quota.
 2.Between 2 vpc we cannot have more than one VPC connection.
 
+VPC Peering Combinations
+1.Same account and same region
+2.Same account different region
+3.Different account and same region
+4.Different account and different region
+
+
+
+
+
