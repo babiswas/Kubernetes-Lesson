@@ -1,0 +1,2 @@
+aws sts get-caller-identity --profile XXXXX
+To know the aws account to which you are logged in.
