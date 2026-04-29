@@ -115,6 +115,14 @@ Type of Identities in aws
 AWS user is one who has username/password and can access aws console.
 Federated user is one who can't access aws console but belong to other IDP like google,facebbok and aws trusts them.
 
+What kind of IDP aws support
+============================
+1.SAML 2.0
+2.OIDC
+
+IAM roles allow access to AWS resources.They have certian level permission.
+
+
 
 
 
