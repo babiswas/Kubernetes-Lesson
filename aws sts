@@ -26,5 +26,10 @@ aws configure set aws_secret_access_key wJalrXUtnFEMI/... --profile temp
 aws configure set aws_session_token AQoDYXdzEJr... --profile temp
 
 
+Perform execution using this profile:
+aws s3 ls --profile temp
+
+
+
 
 
