@@ -10,4 +10,7 @@ So s3 bucket created in one region is acessible from any region.
 Across region s3 access standard method is s3 transfer acceleration
 S3 transfer acceleration
 ==========================
+1.Normal data transfer is through public internet
+2.S3 transfer acceleration is through amazon global network
+
 
