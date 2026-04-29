@@ -140,6 +140,22 @@ Permission policy: What does the role allow once you assume it
 
 Web Identity Federation
 ========================
+Amazon cognito is an identity broker.
+
+
+                   |-----------------------------------------------
+                   |                                               |
+                 user-------------aws-----------cognito---------userpool
+                   |                |
+                assume role        |
+                                facebook
+
+
+
+
+
+
+
 
 
 
