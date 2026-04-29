@@ -81,6 +81,12 @@ export AWS_SESSION_TOKEN
 echo "Temporary credentials set. Expire at: $EXPIRATION"
 echo "Use AWS CLI commands now with this assumed role."
 
+Three concepts
+===============
+1.Role
+2.Permission
+3.Trust relationship
+
 
 
 
