@@ -166,6 +166,47 @@ Ec2 instance profile is the container for IAM role.
 
 Service linked role
 ====================
+A service linked roles has all the permission to perform its work.
+
+Service,Service linked role.
+
+
+WebIdentityRoles
+=================
+
+{
+   "Version": "2012-10-17",
+   "Statement": {
+       "Sid": "RoleForCognito",
+       "Effect": "Allow",
+       "Principal": {"Federated": "cognito-identity.amazonaws.com"},
+       "Action": "sts:AssumeRoleWithWebIdentity",
+       "Condition": {"StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east:12345678-ffff-ffff-ffff-123456"}}
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
