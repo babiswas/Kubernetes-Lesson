@@ -6,3 +6,8 @@ Bucket created in region1 and accessed in region2
 Latency increases.
 Data transfer costs
 So s3 bucket created in one region is acessible from any region.
+
+Across region s3 access standard method is s3 transfer acceleration
+S3 transfer acceleration
+==========================
+
