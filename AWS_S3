@@ -13,4 +13,7 @@ S3 transfer acceleration
 1.Normal data transfer is through public internet
 2.S3 transfer acceleration is through amazon global network
 
+S3 bucket acceleration leverages cloudfront edge locations for data transfer.
+
+
 
