@@ -158,6 +158,44 @@ AWS IAM role types
 4.SAML 2.o role
 5.Custom IAM role
 
+A service role is given to aws services.
+1.Ec2
+2.Lambda Service
+Ec2 instance profile is the container for IAM role.
+
+
+Service linked role
+====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
