@@ -150,6 +150,16 @@ Amazon cognito is an identity broker.
                 assume role        |
                                 facebook
 
+AWS IAM role types
+====================
+1.Service role
+2.Service linked role.
+3.Web identity role
+4.SAML 2.o role
+5.Custom IAM role
+
+
+
 
 
 
