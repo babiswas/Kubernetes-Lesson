@@ -205,6 +205,22 @@ Role Chaining
 =============
 I am role is popular for cross account acess
 
+Identity based policy
+======================
+Policy attached to 
+1.user
+2.role
+3.group
+
+Resource based policy
+======================
+Policy attached to resource
+1.S3
+2.SQS
+3.VPC endpoints
+
+
+
 
 
 
