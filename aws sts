@@ -1,2 +1,7 @@
 aws sts get-caller-identity --profile XXXXX
 To know the aws account to which you are logged in.
+
+Security Token Service(STS)
+============================
+aws sts assume-role --role-arn arn:aws:iam::123456789012:role/MyExampleRole --role-session-name MySessionName 
+--duration-seconds 3600
