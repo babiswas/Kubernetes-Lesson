@@ -87,6 +87,17 @@ Three concepts
 2.Permission
 3.Trust relationship
 
+Long term credential is risky.
+
+Steps for STS
+====================
+1.Identify the service
+2.Provide a role if you trust
+3.Service assume the role
+4.Service performs the task using that role
+5.Tokens expire after sometime
+
+
 
 
 
