@@ -197,6 +197,34 @@ SAML 2.0
    }
  }
 
+For how long can an entity assume a role
+=========================================
+Set while creating the role.
+
+Role Chaining
+=============
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
