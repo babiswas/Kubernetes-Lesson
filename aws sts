@@ -5,3 +5,26 @@ Security Token Service(STS)
 ============================
 aws sts assume-role --role-arn arn:aws:iam::123456789012:role/MyExampleRole --role-session-name MySessionName 
 --duration-seconds 3600
+
+
+{
+    "Credentials": {
+        "AccessKeyId": "ASIA....",
+        "SecretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY",
+        "SessionToken": "AQoDYXdzEJr...<truncated>",
+        "Expiration": "2026-04-28T12:34:56Z"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROAXXXXXX:MySessionName",
+        "Arn": "arn:aws:sts::123456789012:assumed-role/MyExampleRole/MySessionName"
+    }
+}
+
+Instead of exporting env variables manually
+aws configure set aws_access_key_id ASIA... --profile temp
+aws configure set aws_secret_access_key wJalrXUtnFEMI/... --profile temp
+aws configure set aws_session_token AQoDYXdzEJr... --profile temp
+
+
+
+
