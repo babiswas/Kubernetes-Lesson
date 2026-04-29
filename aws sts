@@ -138,6 +138,9 @@ From the above definition, it can be inferred that there are 2 essential aspects
 Trust policy: Who can assume the IAM role
 Permission policy: What does the role allow once you assume it
 
+Web Identity Federation
+========================
+
 
 
 
