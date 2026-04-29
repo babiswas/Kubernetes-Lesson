@@ -1,0 +1,8 @@
+A bucket name is globally unique.
+But a particular bucket reside in a region.
+
+Bucket created in region1 and accessed in region2
+===================================================
+Latency increases.
+Data transfer costs
+So s3 bucket created in one region is acessible from any region.
