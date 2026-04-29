@@ -107,6 +107,14 @@ Federated identity Management ,here credentials provided by the organisation is 
 1.Federated indentity
 Access multiple applications seamlessly.
 
+Type of Identities in aws
+============================
+1.Federated user
+2.Aws user
+
+AWS user is one who has username/password and can access aws console.
+Federated user is one who can't access aws console but belong to other IDP like google,facebbok and aws trusts them.
+
 
 
 
