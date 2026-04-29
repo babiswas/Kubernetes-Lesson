@@ -25,7 +25,6 @@ aws configure set aws_access_key_id ASIA... --profile temp
 aws configure set aws_secret_access_key wJalrXUtnFEMI/... --profile temp
 aws configure set aws_session_token AQoDYXdzEJr... --profile temp
 
-
 Perform execution using this profile:
 aws s3 ls --profile temp
 
@@ -96,6 +95,14 @@ Steps for STS
 3.Service assume the role
 4.Service performs the task using that role
 5.Tokens expire after sometime
+
+SSO
+=====
+Internal apps accessed using SSO uses the same credentials to access internal apps of the organisation using credntials provided by the organisation.
+
+FIM
+======
+Federated identity Management ,here credentials provided by the organisation is used to access apps and resources outside the organisation.
 
 
 
