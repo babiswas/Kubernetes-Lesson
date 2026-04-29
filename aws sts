@@ -30,6 +30,58 @@ Perform execution using this profile:
 aws s3 ls --profile temp
 
 
+Script to assume role in aws for resource access
+==================================================
+
+#!/bin/bash
+
+# ------------------------------
+# AWS Assume Role Script
+# ------------------------------
+# Usage: ./assume_role.sh <account_id> <role_name> <session_name>
+# Example: ./assume_role.sh 123456789012 MyAdminRole DevSession
+# ------------------------------
+
+# Input validation
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <account_id> <role_name> <session_name>"
+    exit 1
+fi
+
+ACCOUNT_ID=$1
+ROLE_NAME=$2
+SESSION_NAME=$3
+
+ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/${ROLE_NAME}"
+
+echo "Assuming role: $ROLE_ARN with session name: $SESSION_NAME"
+
+# Call STS to assume role
+CREDS_JSON=$(aws sts assume-role \
+    --role-arn "$ROLE_ARN" \
+    --role-session-name "$SESSION_NAME" \
+    --output json)
+
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to assume role."
+    exit 1
+fi
+
+# Extract temporary credentials
+AWS_ACCESS_KEY_ID=$(echo $CREDS_JSON | jq -r '.Credentials.AccessKeyId')
+AWS_SECRET_ACCESS_KEY=$(echo $CREDS_JSON | jq -r '.Credentials.SecretAccessKey')
+AWS_SESSION_TOKEN=$(echo $CREDS_JSON | jq -r '.Credentials.SessionToken')
+EXPIRATION=$(echo $CREDS_JSON | jq -r '.Credentials.Expiration')
+
+# Export credentials for current shell session
+export AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY
+export AWS_SESSION_TOKEN
+
+echo "Temporary credentials set. Expire at: $EXPIRATION"
+echo "Use AWS CLI commands now with this assumed role."
+
+
 
 
 
