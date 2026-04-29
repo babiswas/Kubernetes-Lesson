@@ -16,6 +16,12 @@ S3 transfer acceleration
 S3 bucket acceleration leverages cloudfront edge locations for data transfer.
 From edge location the data is routed through amazon global network(optimised path)
 
+When s3 transfer acceleration is used
+====================================
+1.Cross region data transfer.
+2.Large object upload
+3.High latency networks.
+
 
 
 
