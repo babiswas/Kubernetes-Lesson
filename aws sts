@@ -121,6 +121,15 @@ What kind of IDP aws support
 2.OIDC
 
 IAM roles allow access to AWS resources.They have certian level permission.
+Roles removes the overhead of managing users.
+
+Who can assume roles
+=====================
+1.AWS users from same account.
+2.AWS user from differnt aws account
+3.AWS services
+4.Federated identities
+
 
 
 
