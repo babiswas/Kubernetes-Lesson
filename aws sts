@@ -131,6 +131,18 @@ Who can assume roles
 4.Federated identities
 
 
+Criteria
+=============
+From the above definition, it can be inferred that there are 2 essential aspects to an IAM role:
+
+Trust policy: Who can assume the IAM role
+Permission policy: What does the role allow once you assume it
+
+
+
+
+
+
 
 
 
