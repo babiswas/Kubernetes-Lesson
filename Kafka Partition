@@ -1,3 +1,5 @@
 A topic in kafka is associated with multiple partitions.
 All the partitions doesn't reside in the same broker.
 There is a leader and follower partitions based on replication factor.
+Replication factor decides how many follower partitions will be there.
+leader and follower partitions doesn't reside in the same cluster.
