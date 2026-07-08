@@ -1,0 +1,3 @@
+A topic in kafka is associated with multiple partitions.
+All the partitions doesn't reside in the same broker.
+There is a leader and follower partitions based on replication factor.
